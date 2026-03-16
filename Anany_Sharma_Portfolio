@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anany Sharma | Game Developer</title>
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
+}
+
+body{
+background:linear-gradient(135deg,#000000,#1a0000,#330000);
+color:white;
+}
+
+header{
+text-align:center;
+padding:25px;
+background:#000;
+border-bottom:1px solid #400000;
+}
+
+header h1{
+color:#ff4d4d;
+}
+
+nav a{
+margin:0 15px;
+text-decoration:none;
+color:#aaa;
+transition:.3s;
+}
+
+nav a:hover{
+color:#ff4d4d;
+}
+
+.hero{
+height:70vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#bbb;
+}
+
+.btn{
+margin-top:20px;
+padding:12px 25px;
+border-radius:30px;
+background:#ff1a1a;
+color:white;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+background:#cc0000;
+transform:scale(1.1);
+}
+
+section{
+padding:80px 20px;
+max-width:1100px;
+margin:auto;
+}
+
+h2{
+text-align:center;
+margin-bottom:40px;
+color:#ff4d4d;
+}
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.card{
+background:#0d0d0d;
+padding:25px;
+border-radius:10px;
+border:1px solid #330000;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#ff1a1a;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+border-radius:10px;
+transition:.4s;
+}
+
+.gallery img:hover{
+transform:scale(1.08);
+}
+
+.skills{
+text-align:center;
+}
+
+.skill{
+display:inline-block;
+background:#1a0000;
+padding:10px 15px;
+margin:8px;
+border-radius:6px;
+border:1px solid #550000;
+}
+
+footer{
+text-align:center;
+padding:30px;
+border-top:1px solid #330000;
+color:#888;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Anany Sharma</h1>
+<p>Game Developer | Unreal Engine | Unity | AR/VR</p>
+
+<nav>
+
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#gallery">Art</a>
+<a href="#skills">Skills</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+</header>
+
+<div class="hero">
+
+<h1 data-aos="fade-up">Game Developer & Environment Designer</h1>
+
+<p data-aos="fade-up" data-aos-delay="200">
+Creating immersive worlds using Unreal Engine and Unity
+</p>
+
+<a class="btn" data-aos="zoom-in" href="https://www.artstation.com/bhamiya">
+View ArtStation
+</a>
+
+</div>
+
+<section id="about" data-aos="fade-up">
+
+<h2>About Me</h2>
+
+<p style="text-align:center;max-width:700px;margin:auto;color:#ccc">
+
+Passionate game developer specializing in Unreal Engine and immersive environments.
+Currently pursuing a Master's in Game Design & Development while building original
+game projects and exploring interactive storytelling.
+
+</p>
+
+</section>
+
+<section id="projects">
+
+<h2 data-aos="fade-up">Projects</h2>
+
+<div class="projects">
+
+<div class="card" data-aos="fade-right">
+<h3>Knock Knock</h3>
+<p>Psychological horror game inspired by Indian mythology built using Unreal Engine.</p>
+</div>
+
+<div class="card" data-aos="fade-up">
+<h3>Zombie Land</h3>
+<p>Open-world zombie survival game focusing on exploration and combat mechanics.</p>
+</div>
+
+<div class="card" data-aos="fade-left">
+<h3>What's Up There</h3>
+<p>Game published on Epic Games Store with full development lifecycle.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="gallery">
+
+<h2 data-aos="fade-up">ArtStation Gallery</h2>
+
+<div class="gallery">
+
+<!-- Replace with your ArtStation image links -->
+
+<img src="https://cdna.artstation.com/p/assets/images/images/080/249/680/large/anany-sharma-screenshot-2024-09-23-193251.jpg?1727100546" data-aos="zoom-in">
+<img src="https://cdnb.artstation.com/p/assets/images/images/086/873/923/large/anany-sharma-screenshot-2025-04-10-172345.jpg?1744287560" data-aos="zoom-in">
+<img src="https://cdnb.artstation.com/p/assets/images/images/080/249/871/large/anany-sharma-screenshot-2024-09-23-193608.jpg?1727100892" data-aos="zoom-in">
+<img src="https://cdnb.artstation.com/p/assets/images/images/080/879/983/large/anany-sharma-e00w8-o4x9o.jpg?1728782752" data-aos="zoom-in">
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 data-aos="fade-up">Skills</h2>
+
+<div class="skills">
+
+<span class="skill">Unreal Engine</span>
+<span class="skill">Unity</span>
+<span class="skill">C#</span>
+<span class="skill">Level Design</span>
+<span class="skill">Environment Art</span>
+<span class="skill">Maya</span>
+<span class="skill">ZBrush</span>
+<span class="skill">Photoshop</span>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 data-aos="fade-up">Contact</h2>
+
+<p style="text-align:center;color:#ccc">
+
+Email: ananaysh21@gmail.com<br>
+Phone: +91 6376548688<br>
+ArtStation: https://www.artstation.com/bhamiya
+
+</p>
+
+</section>
+
+<footer>
+
+© 2026 Anany Sharma
+
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+AOS.init({
+duration:1200
+})
+</script>
+
+</body>
+</html>
