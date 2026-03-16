@@ -10,6 +10,8 @@
 
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <style>
 
 *{
@@ -22,6 +24,16 @@ font-family:Segoe UI;
 body{
 background:linear-gradient(135deg,#000000,#1a0000,#330000);
 color:white;
+overflow-x:hidden;
+}
+
+#bg-canvas{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:-1;
 }
 
 header{
@@ -74,13 +86,14 @@ color:#bbb;
 }
 
 .btn{
-margin-top:20px;
-padding:12px 25px;
+margin-top:15px;
+padding:10px 20px;
 border-radius:30px;
 background:#ff1a1a;
 color:white;
 text-decoration:none;
 transition:.3s;
+display:inline-block;
 }
 
 .btn:hover{
@@ -112,6 +125,9 @@ padding:25px;
 border-radius:10px;
 border:1px solid #330000;
 transition:.3s;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 }
 
 .card:hover{
@@ -173,6 +189,8 @@ color:#888;
 
 <body>
 
+<div id="bg-canvas"></div>
+
 <header>
 
 <h1>Anany Sharma</h1>
@@ -230,7 +248,13 @@ game projects and exploring interactive storytelling.
 <div class="card">
 <h3>What's Up There</h3>
 <p>My game published on Epic Games Store.</p>
-<a class="btn" href="https://store.epicgames.com/en-US/p/whats-up-there-0989f2">View on Epic Store</a>
+
+<div style="margin-top:15px;">
+<a class="btn" href="https://store.epicgames.com/en-US/p/whats-up-there-0989f2" target="_blank">
+View on Epic Store
+</a>
+</div>
+
 </div>
 
 <div class="card" data-aos="fade-right">
@@ -267,13 +291,13 @@ game projects and exploring interactive storytelling.
 
 <div class="gallery">
 
-<img src="https://cdna.artstation.com/p/assets/images/images/080/249/680/large/anany-sharma-screenshot-2024-09-23-193251.jpg?1727100546" data-aos="zoom-in">
+<img src="https://cdna.artstation.com/p/assets/images/images/080/249/680/large/anany-sharma-screenshot-2024-09-23-193251.jpg?1727100546">
 
-<img src="https://cdnb.artstation.com/p/assets/images/images/086/873/923/large/anany-sharma-screenshot-2025-04-10-172345.jpg?1744287560" data-aos="zoom-in">
+<img src="https://cdnb.artstation.com/p/assets/images/images/086/873/923/large/anany-sharma-screenshot-2025-04-10-172345.jpg?1744287560">
 
-<img src="https://cdnb.artstation.com/p/assets/images/images/080/249/871/large/anany-sharma-screenshot-2024-09-23-193608.jpg?1727100892" data-aos="zoom-in">
+<img src="https://cdnb.artstation.com/p/assets/images/images/080/249/871/large/anany-sharma-screenshot-2024-09-23-193608.jpg?1727100892">
 
-<img src="https://cdnb.artstation.com/p/assets/images/images/080/879/983/large/anany-sharma-e00w8-o4x9o.jpg?1728782752" data-aos="zoom-in">
+<img src="https://cdnb.artstation.com/p/assets/images/images/080/879/983/large/anany-sharma-e00w8-o4x9o.jpg?1728782752">
 
 </div>
 
@@ -322,9 +346,58 @@ ArtStation: https://www.artstation.com/bhamiya
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
-AOS.init({
-duration:1200
-})
+AOS.init({duration:1200})
+</script>
+
+<script>
+
+let scene = new THREE.Scene();
+let camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+
+let renderer = new THREE.WebGLRenderer({alpha:true});
+renderer.setSize(window.innerWidth,window.innerHeight);
+document.getElementById("bg-canvas").appendChild(renderer.domElement);
+
+let geometry = new THREE.BufferGeometry();
+let vertices=[];
+
+for(let i=0;i<7000;i++){
+vertices.push(
+Math.random()*2000-1000,
+Math.random()*2000-1000,
+Math.random()*2000-1000
+);
+}
+
+geometry.setAttribute('position',new THREE.Float32BufferAttribute(vertices,3));
+
+let material=new THREE.PointsMaterial({
+color:0xff1a1a,
+size:2
+});
+
+let particles=new THREE.Points(geometry,material);
+scene.add(particles);
+
+camera.position.z=500;
+
+function animate(){
+requestAnimationFrame(animate);
+
+particles.rotation.x+=0.0005;
+particles.rotation.y+=0.001;
+
+renderer.render(scene,camera);
+}
+
+animate();
+
+window.addEventListener('resize',()=>{
+camera.aspect=window.innerWidth/window.innerHeight;
+camera.updateProjectionMatrix();
+renderer.setSize(window.innerWidth,window.innerHeight);
+});
+
 </script>
 
 </body>
